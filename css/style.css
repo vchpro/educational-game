@@ -1,0 +1,424 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px; 
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+}
+
+.hide {
+  display: none;
+}
+
+.header {
+  background-color: #161C35;
+}
+
+.header-container__heading {
+  margin-top: 17px;
+  margin-bottom: 0px;
+  font-size: 20px;
+  line-height: 27px;
+  color: #FFFCFC;
+}
+
+.header-container {
+  width: 275px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-container__burger {
+  height: 11px;
+  width: 25px;
+  background-image: url("../img/icon_menu_mobile.svg");
+  margin-top: 25px;
+}
+
+.header-container__burger:hover {
+  cursor: pointer;
+}
+
+.main {
+  background-color: #161C35;
+}
+
+.main__text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: #FFFFFF;
+  width: 238px;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 22px;
+}
+
+.auth {
+  display: block;
+  min-width: 190px;
+  min-height: 40px;
+  background-color: #FFD74B;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #161C35;
+  margin: 0 auto;
+  margin-top: 22px;
+}
+
+.auth:hover {
+  cursor: pointer;
+  background-color: #FFBD30;
+}
+
+.auth:active {
+  color: rgba(22, 28, 53, 0.3);
+}
+
+.decorate {
+  height: 177px;
+  background-image: url(../img/best-course-mobile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+.header-container__auth {
+  display: none;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #FFFFFF;
+  min-height: 278px;
+}
+
+.mobile-center {
+  display: flex;
+  justify-content: space-between;
+  width: 275px;
+  margin: 0 auto;
+  padding-left: 70px;
+}
+
+.mobile-center__heading {
+  font-size: 22px;
+  line-height: 30px;
+  color: #000000;
+  margin-top: 21px;
+}
+
+.mobile-center__close {
+  background-image: url(../img/close.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 19px;
+  margin-top: 27px;
+}
+
+.mobile-center__close:hover {
+  cursor: pointer;
+}
+
+.mobile-menu__auth {
+  margin-top: 48px;
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  width: 105px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0px;
+  margin-top: 53px;
+}
+
+.social__item {
+  background-repeat: no-repeat;
+}
+
+.facebook {
+  background-image: url(../img/facebook.svg);
+  width: 11px;
+  height: 21px;
+}
+
+.vk {
+  background-image: url(../img/vk.svg);
+  width: 23px;
+  height: 12px;
+  margin-top: 5px;
+}
+
+.instagram {
+  background-image: url(../img/instagram.svg);
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  .header-container {
+    width: 696px;
+  }
+
+  .header-container__burger {
+    display: none;
+  }
+
+  .header-container__auth {
+    display: block;
+    margin: 0px;
+    margin-top: 18px;
+  }
+
+  .main__text {
+    width: 412px;
+    padding-top: 48px;
+  }
+
+  .decorate {
+    height: 396px;
+    background-image: url(../img/best-course-tablet.png);
+  }
+
+  .main__auth {
+    display: none;
+  }
+
+  .decorate {
+    margin-top: 27px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header-container__heading {
+    font-size: 32px;
+    line-height: 44px;
+    margin-top: 25px;
+  }
+
+  .header-container__auth {
+    margin-top: 25px;
+  }
+
+  .header-container__auth {
+    min-width: 222px;
+    min-height: 44px;
+    font-size: 22px;
+    line-height: 20px;
+  }
+
+  .main__text {
+    width: 580px;
+    font-size: 30px;
+    line-height: 40px;
+    padding-top: 91px;
+  }
+
+  .decorate {
+    margin-top: 46px;
+    background-image: url(../img/best-course-computer.png);
+    height: 726px;
+  }
+}
+
+.reg, .login {
+  position: absolute;
+  width: 100%;
+  min-height: 454px;
+  top: 0;
+  background-color: #192144;
+}
+
+.login {
+  min-height: 368px;
+}
+
+.login-center {
+  width: 100%;
+  display: flex;
+}
+
+.reg-center {
+  width: 100%;
+  display: flex;
+}
+
+.reg-center__heading {
+  font-size: 30px;
+  line-height: 41px;
+  color: #FF8D30;
+  margin: 0 auto;
+  margin-top: 11px;
+  padding-left: 70px;
+  margin-bottom: 33px;
+}
+
+.login-center__heading {
+  font-size: 30px;
+  line-height: 41px;
+  color: #FF8D30;
+  margin: 0 auto;
+  margin-top: 11px;
+  padding-left: 70px;
+  margin-bottom: 33px;
+}
+
+.reg-center__close, .login-center__close {
+  background-image: url(../img/close.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  margin-right: 35px;
+}
+
+.reg-center__close:hover, .login-center__close:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.reg__input, .login__input {
+  display: block;
+  width: 220px;
+  height: 62px;
+  border-radius: 15px;
+  border: none;
+  margin: 0 auto;
+  padding-right: 68px;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  /* padding-top: 22px;
+  padding-left: 25px; */
+  text-indent: 25px;
+}
+
+.reg__input:hover, .login__input:hover {
+  border: none;
+}
+
+.reg__input::placeholder, .login__input::placeholder {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  color: #444444;
+  opacity: 0.3;
+  line-height: 60px;
+}
+
+.reg__input:not(:first-of-type) {
+  margin-top: 32px;
+}
+
+.login__input:not(:first-of-type) {
+  margin-top: 32px;
+}
+
+.reg__button, .login__button {
+  display: block;
+  width: 245px;
+  height: 40px;
+  background-color: #FFD74B;
+  border-radius: 25px;
+  border: none;
+  margin: 0 auto;
+  font-weight: bold;
+  margin-top: 25px;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #161C35;
+}
+
+.reg__button:hover, .login__button:hover {
+  cursor: pointer;
+  background-color: #FFBD30;
+}
+
+.reg__yet, .login__yet {
+  display: block;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFD74B;
+  background: none;
+  border: none;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+
+.reg__yet:hover, .login__yet:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .reg, .login {
+    top: 106px;
+    width: 410px;
+    min-height: 455px;
+    left:50%;
+    transform:translate(-50%, 0);
+    border-radius: 15px;
+  }
+
+  .login {
+    min-height: 368px;
+  }
+
+  .reg__input, .login__input {
+    width: 260px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .reg, .login {
+    width: 600px;
+    min-height: 462px; 
+  }
+
+  .login {
+    min-height: 368px;
+  }
+
+  .reg-center__heading, .login-center__heading {
+    font-size: 32px;
+    line-height: 41px;
+  }
+
+  .reg__input, .login__input {
+    width: 300px;
+  }
+
+  .reg__button, .login_button {
+    width: 270px;
+  }
+}
