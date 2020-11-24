@@ -361,7 +361,7 @@ body {
   opacity: 0.6;
 }
 
-.reg__input, .login__input {
+.reg__input, .login__input, .control-form__input {
   display: block;
   width: 220px;
   height: 62px;
@@ -371,16 +371,44 @@ body {
   padding-right: 68px;
   background-color: #FFFFFF;
   box-sizing: border-box;
-  /* padding-top: 22px;
-  padding-left: 25px; */
   text-indent: 25px;
 }
 
-.reg__input:hover, .login__input:hover {
+.control-form {
+  width: 270px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 34px;
+}
+
+.control-form__input {
+  margin: 0;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.control-form__button {
+  margin-left: -20px;
+  width: 65px;
+  height: 62px;
+  background-color: #FFD74B;
+  border-radius: 20px;
+  border: none;
+  background-image: url(../img/button.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.control-form__button:hover {
+  cursor: pointer;
+  background-color: #FFBD30;
+}
+
+.reg__input:hover, .login__input:hover, .control-form__input:hover {
   border: none;
 }
 
-.reg__input::placeholder, .login__input::placeholder {
+.reg__input::placeholder, .login__input::placeholder, .control-form__input::placeholder {
   font-weight: bold;
   font-size: 18px;
   line-height: 18px;
