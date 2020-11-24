@@ -29,6 +29,7 @@
                 <button type="button" class="auth header-container__auth profile">Профиль</button>
                 <div class="profile-container">
                     <p class="profile-container__text">Количество очков: <?php echo $user->points; ?></p>
+                    <a href="friend.php" class="profile-container__logout">Друзья</a>
                     <a href="logout.php" class="profile-container__logout">Выйти</a>
                 </div>
             </div>
@@ -41,6 +42,8 @@
         <div class="btn-container">
             <a href="math.php" class="btn-container__btn btn">Математика</a>
             <a href="logic.php" class="btn-container__btn btn">Логика</a>
+            <a href="friend.php" class="btn-container__btn btn">Друзья</a>
+            <a href="rate.php" class="btn-container__btn btn">Рейтинг</a>
         </div>
     
         <div class="decorate decorate-choose">

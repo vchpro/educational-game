@@ -222,6 +222,47 @@ body {
   margin-top: 23px;
 }
 
+.my-friends {
+  margin-top: 42px;
+}
+
+.my-friends__heading {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 18px;
+  text-align: center;
+  color: #444444;
+}
+
+.dell_friend {
+  width: 19px;
+  height: 19px;
+  background: none;
+  background-image: url(../img/close-red.svg);
+  border: none;
+  margin-top: 14px;
+}
+
+.dell_friend:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.friend-card {
+  width: 180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.friend-card__name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  color: #444444;
+}
+
 @media (min-width: 768px) {
   .btn-container__btn:not(:first-of-type) {
     margin-top: 0px;
@@ -230,9 +271,22 @@ body {
   .btn-container {
     width: 406px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
     margin-top: 65px;
+  }
+
+  .btn-container__btn:nth-of-type(3) {
+    margin-top: 15px;
+  }
+
+  .btn-container__btn--modifed:nth-of-type(3) {
+    margin-top: 0px;
+  }
+
+  .btn-container__btn:nth-of-type(4) {
+    margin-top: 15px;
   }
 
   .mobile-menu {
@@ -472,7 +526,7 @@ body {
 .profile-container {
   position: absolute;
   width: 190px;
-  height: 88px;
+  height: 118px;
   top: 58px;
   background-color: #FFBD30;
   border-bottom-left-radius: 25px;
@@ -615,7 +669,7 @@ body {
 }
 
 .rate {
-  width: 176px;
+  width: 226px;
   margin: 0 auto;
   padding-top: 15px;
 }
@@ -705,6 +759,26 @@ body {
   margin-bottom: 20px;
 }
 
+.friend__name {
+  font-size: 20px;
+  line-height: 40px;
+  margin: 0px;
+  padding-top: 5px;
+  color: #444444;
+  text-align: center;
+}
+
+.friend__url {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  color: #444444;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
 @media (min-width: 768px) {
   .main__task {
     width: 600px;
@@ -784,7 +858,7 @@ body {
 
   .rate {
     padding-top: 35px;
-    width: 190px;
+    width: 245px;
   }
 
   .your-rate {
@@ -835,7 +909,7 @@ body {
   }
 
   .profile-container {
-    height: 96px;
+    height: 126px;
   }
 
   .profile-container__text {
@@ -862,6 +936,11 @@ body {
     padding-top: 12px;
     font-size: 22px;
     line-height: 20px;
+  }
+
+  .btn-container__btn {
+    height: 40px;
+    padding-top: 18px;
   }
 
   .reg, .login {
@@ -964,4 +1043,33 @@ body {
   text-align: center;
   color: #000000;
   margin-top: 20px;
+}
+
+@media (min-width: 1440px) {
+  .friend {
+    width: 665px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .friend__name {
+    font-size: 22px;
+  }
+
+  .friend__url {
+    font-size: 22px;
+  }
+
+  .my-friends__heading {
+    font-size: 24px;
+  }
+
+  .friend-card {
+    width: 213px;
+  }
+
+  .friend-card__name {
+    font-size: 22px;
+  }
 }

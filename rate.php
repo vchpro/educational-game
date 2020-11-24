@@ -31,6 +31,7 @@
                 <button type="button" class="auth header-container__auth profile">Профиль</button>
                 <div class="profile-container">
                     <p class="profile-container__text">Количество очков: <?php echo $user->points; ?></p>
+                    <a href="friend.php" class="profile-container__logout">Друзья</a>
                     <a href="logout.php" class="profile-container__logout">Выйти</a>
                 </div>
             </div>

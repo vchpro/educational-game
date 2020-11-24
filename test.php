@@ -29,6 +29,16 @@
         R::store($user);
     }
 
+    function generate_logic_1() {
+        global $user;
+        global $question;
+        $question = R::findOne('questions', 'id = ?', array(rand(16, 18)));
+
+        $user->ans = $question->ans;
+
+        R::store($user);
+    }
+
     if(isset ($data2["type"]) && isset ($data2["level"])) {
         switch($data2["type"]) {
             case "math":
@@ -51,6 +61,19 @@
                     else {
                         echo "<script>document.location.href = '/choose.php';</script>";
                         die;
+                    }
+                break;
+                
+                case "logic":
+                    switch($data2["level"]) {
+                        case 1:
+                            generate_logic_1();
+                        break;
+
+                        default:
+                            echo "<script>document.location.href = '/choose.php';</script>";
+                            die;
+                        break;
                     }
                 break;
 
@@ -129,6 +152,7 @@
                 <button type="button" class="auth header-container__auth profile">Профиль</button>
                 <div class="profile-container">
                     <p class="profile-container__text">Количество очков: <?php echo $user->points; ?></p>
+                    <a href="friend.php" class="profile-container__logout">Друзья</a>
                     <a href="logout.php" class="profile-container__logout">Выйти</a>
                 </div>
             </div>
@@ -169,7 +193,7 @@
                     }
             }
 
-            else if($data2["type"] == "math" && $data2["level"] == 2) {
+            else if(($data2["type"] == "math" && $data2["level"] == 2) || ($data2["type"] == "logic" && $data2["level"] == 1)) {
                     switch($tmp) {
                         case 1:
                             $btn1 = $question->ans;
