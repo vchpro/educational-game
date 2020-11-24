@@ -34,6 +34,11 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  padding-left: 13px;
+}
+
+.header-container--modifed {
+  padding-left: 38px;
 }
 
 .header-container__burger {
@@ -49,6 +54,10 @@ body {
 
 .main {
   background-color: #161C35;
+}
+
+.main--modifed {
+  background-color: #E6E8F1;
 }
 
 .main__text {
@@ -200,6 +209,7 @@ body {
   text-decoration: none;
   padding-top: 10px;
   margin: 0 auto;
+  border: none;
 }
 
 .btn:hover {
@@ -473,9 +483,86 @@ body {
   margin-top: 14px;
 }
 
+.level {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.level-container {
+  width: 320px;
+  min-height: 158px;
+  background-color: #FFFFFF;
+}
+
+.level-container__header {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 21px;
+  text-align: center;
+  color: #1D2E5B;
+  margin: 0;
+  padding-top: 21px;
+}
+
+.level-container__text {
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #444444;
+  margin: 0;
+  margin-top: 21px;
+}
+
+.level-container__button {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: 21px;
+}
+
+.level__img {
+  display: block;
+  margin: 0 auto;
+}
+
+.level:not(:first-of-type) {
+  margin-top: 53px;
+}
+
+.level__img--two {
+  margin-bottom: 24px;
+}
+
+.main__text--modifed {
+  padding-bottom: 11px;
+}
+
 @media (min-width: 768px) {
   .decorate-choose {
     margin-top: 40px;
+  }
+
+  .main__text--modifed {
+    padding-bottom: 8px;
+    line-height: 40px;
+  }
+
+  .levels {
+    display: flex;
+    width: 688px;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .level {
+    margin-top: auto;
+  }
+
+  .level:not(:first-of-type) {
+    margin-top: 0px;
+  }
+
+  .level:nth-of-type(2) {
+    margin-top: auto;
   }
 
   .reg, .login {
@@ -497,9 +584,29 @@ body {
 }
 
 @media (min-width: 1400px) {
+  .main__text--modifed {
+    padding-bottom: 22px;
+  }
+
+  .level {
+    width: 349px;
+  }
+
+  .level-container {
+    width: 349px;
+  }
+
+  .levels {
+    width: 743px;
+  }
+
   .decorate-choose {
     margin-top: 56px;
     top: 60px;
+  }
+
+  .profile-container {
+    height: 96px;
   }
 
   .profile-container__text {
@@ -552,5 +659,14 @@ body {
 
   .profile-container {
     width: 222px;
+  }
+
+  .level-container__button {
+    height: 41px;
+    padding-top: 0px;
+  }
+
+  .level-container {
+    min-height: 163px;
   }
 }

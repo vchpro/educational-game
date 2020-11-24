@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-container">
+        <div class="header-container header-container--modifed">
             <h1 class="header-container__heading">Educational Game</h1>
             <span class="header-container__burger">
                 <span class="visually-hidden">Меню</span>
@@ -24,10 +24,30 @@
                 </div>
             </div>
         </div>
+    <p class="main__text main__text--modifed">Выберите уровень</p>
     </header>
 
-    <main class="main">
-        <p class="main__text">Выберите уровень</p>
+    <main class="main main--modifed">
+        <section class="levels">
+            <h1 class="visually-hidden">Уровни</h1>
+            <article class="level">
+                <img class="level__img level__img--one" src="img/math-1.png">
+            <div class="level-container">
+                <p class="level-container__header">1 уровень</p>
+                <p class="level-container__text">Математические примеры</p>
+                <button type="button" class="btn level-container__button">Выбрать</button>
+            </div>
+            </article>
+
+            <article class="level">
+                <img class="level__img level__img--two" src="img/math-2.svg">
+            <div class="level-container">
+                <p class="level-container__header">2 уровень</p>
+                <p class="level-container__text">Задачи на скорость</p>
+                <button type="button" class="btn level-container__button">Выбрать</button>
+            </div>
+            </article>
+        </section>
     </main>
 
     <section class="mobile-menu hide">
