@@ -48,3 +48,10 @@ openMENU.onclick = function() {
 closeMENU.onclick = function() {
     menuMOBILE.classList.add("hide");
 }
+
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode === 27) {
+        menuREG.classList.add('hide');
+        menuLOGIN.classList.add('hide');
+    }
+})
