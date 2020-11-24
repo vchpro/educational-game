@@ -3,6 +3,8 @@
     if (! isset($_SESSION['logged_user']) ) {
         echo "<script>document.location.href = '/index.php';</script>";
     }
+
+    $top = R::findAll('users',' ORDER BY points DESC LIMIT 3 ');
 ?>
 
 <!DOCTYPE html>
@@ -39,19 +41,36 @@
     <main class="main main--modifed">
         <section class="rate">
             <div class="rate__item rate__item--first">
-                <span class="rate-name">Владислав</span>
+                <span class="rate-name"><?php 
+                foreach($top as $t) {
+                    echo $t->name." (".$t->points.")";
+                    break; }  ?></span>
             </div>
 
             <div class="rate__item rate__item--second">
-                <span class="rate-name">Владислав</span>
+                <span class="rate-name"><?php
+                $count = 0;
+                foreach($top as $t) {
+                    $count += 1;
+                    if($count == 2) {
+                        echo $t->name." (".$t->points.")";
+                        break; }
+                    } ?></span>
             </div>
 
             <div class="rate__item rate__item--third">
-                <span class="rate-name">Владислав</span>
+                <span class="rate-name"><?php
+                $count = 0;
+                foreach($top as $t) {
+                    $count += 1;
+                    if($count == 3) {
+                        echo $t->name." (".$t->points.")";
+                        break; }
+                    } ?></span>
             </div>
         </section>
 
-        <span class="your-rate">Ваше место: 155 (1000 очков)</span>
+        <span class="your-rate">У вас <?php echo $user->points ?> очков</span>
     </main>
 
     <section class="mobile-menu hide">
