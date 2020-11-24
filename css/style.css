@@ -612,7 +612,65 @@ body {
   color: #FFFFFF;
 }
 
+.rate {
+  width: 176px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.rate__item {
+  display: flex;
+}
+
+.rate__item::before {
+  display: block;
+  content: "";
+  width: 46px;
+  height: 45px;
+  background-image: url(../img/rate-1.png);
+  background-repeat: no-repeat;
+}
+
+.rate__item--second::before {
+  width: 48px;
+  height: 47px;
+  background-image: url(../img/rate-2.png);
+}
+
+.rate__item--third::before {
+  width: 48px;
+  height: 48px;
+  background-image: url(../img/rate-3.png);
+}
+
+.rate__item:not(:first-of-type) {
+  margin-top: 12px;
+}
+
+.rate-name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: #444444;
+  margin-left: auto;
+}
+
+.your-rate {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  color: #444444;
+  margin: 0px;
+  margin-top: 36px;
+}
+
 @media (min-width: 768px) {
+  .rate {
+    padding-top: 25px;
+  }
+
   .decorate-choose {
     margin-top: 40px;
   }
@@ -668,6 +726,46 @@ body {
 }
 
 @media (min-width: 1400px) {
+  .rate__item:not(:first-of-type) {
+    margin-top: 18px;
+  }
+  
+  .rate-name {
+    font-size: 21px;
+    padding-top: 8px;
+  }
+
+  .rate {
+    padding-top: 35px;
+    width: 190px;
+  }
+
+  .your-rate {
+    font-size: 22px;
+    margin-top: 34px;
+  }
+
+  .rate__item::before {
+    display: block;
+    content: "";
+    width: 63px;
+    height: 61px;
+    background-image: url(../img/rate-full-1.png);
+    background-repeat: no-repeat;
+  }
+  
+  .rate__item--second::before {
+    width: 63px;
+    height: 61px;
+    background-image: url(../img/rate-full-2.png);
+  }
+  
+  .rate__item--third::before {
+    width: 63px;
+    height: 63px;
+    background-image: url(../img/rate-full-3.png);
+  }
+
   .main__text--modifed {
     padding-bottom: 22px;
   }
