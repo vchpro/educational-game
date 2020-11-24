@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
-    <title>Educational Game | Выбор категории</title>
+    <title>Educational Game | Прохождение уровня</title>
 </head>
 <body>
     <header class="header">
         <div class="header-container header-container--modifed">
             <h1 class="header-container__heading">
-                <a>Educational Game</a>
+                <a href="choose.html">Educational Game</a>
             </h1>
             <span class="header-container__burger">
                 <span class="visually-hidden">Меню</span>
@@ -26,19 +26,19 @@
                 </div>
             </div>
         </div>
+    <p class="main__text main__text--modifed">Прохождение уровня</p>
     </header>
 
-    <main class="main">
-        <p class="main__text">Выберите раздел</p>
+    <main class="main main--modifed">
+        <p class="main__task">100 + 300 / 5</p>
 
-        <div class="btn-container">
-            <a href="math.html" class="btn-container__btn btn">Математика</a>
-            <a href="logic.html" class="btn-container__btn btn">Логика</a>
+        <div class="btn-container btn-container--modifed">
+            <button type="button" class="btn-container__btn btn-container__btn--modifed btn">50</button>
+            <button type="button" class="btn-container__btn btn-container__btn--modifed btn">160</button>
+            <button type="button" class="btn-container__btn btn-container__btn--modifed btn">220</button>
         </div>
-    
-        <div class="decorate decorate-choose">
-            <span class="visually-hidden">Наша платформа создана для дошкольников и школьников младших классов</span>
-        </div>
+
+        <a href="math.html" class="main__route-btn">Выбрать другой уровень</a>
     </main>
 
     <section class="mobile-menu hide">

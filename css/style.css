@@ -21,12 +21,13 @@ body {
   background-color: #161C35;
 }
 
-.header-container__heading {
+.header-container__heading a {
   margin-top: 17px;
   margin-bottom: 0px;
   font-size: 20px;
   line-height: 27px;
   color: #FFFCFC;
+  text-decoration: none;
 }
 
 .header-container {
@@ -45,7 +46,7 @@ body {
   height: 11px;
   width: 25px;
   background-image: url("../img/icon_menu_mobile.svg");
-  margin-top: 25px;
+  margin-top: 40px;
 }
 
 .header-container__burger:hover {
@@ -180,14 +181,14 @@ body {
   background-image: url(../img/vk.svg);
   width: 23px;
   height: 12px;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .instagram {
   background-image: url(../img/instagram.svg);
   width: 18px;
   height: 18px;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .btn-container {
@@ -272,7 +273,7 @@ body {
 }
 
 @media (min-width: 1440px) {
-  .header-container__heading {
+  .header-container__heading a {
     font-size: 32px;
     line-height: 44px;
     margin-top: 25px;
@@ -472,6 +473,10 @@ body {
   margin-top: 19px;
 }
 
+.profile-container__logout:hover {
+  opacity: 0.6;
+}
+
 .profile-container__text {
   font-weight: bold;
   font-size: 11px;
@@ -536,6 +541,49 @@ body {
   padding-bottom: 11px;
 }
 
+.main__task {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 18px;
+  text-align: center;
+  color: #444444;
+  margin: 0px;
+  padding-top: 19px;
+}
+
+.btn-container__btn--modifed {
+  width: 149px;
+  height: 40px;
+  padding-top: 0px;
+}
+
+.btn-container--modifed {
+  margin-top: 47px;   
+}
+
+.main__route-btn {
+  box-sizing: border-box;
+  display: block;
+  width: 245px;
+  height: 52px;
+  border: 5px solid #192144;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  color: #1D2E5B;
+  text-decoration: none;
+  padding-top: 12px;
+  padding-left: 12px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.main__route-btn:hover {
+  background-color: #192144;
+  color: #FFFFFF;
+}
+
 @media (min-width: 768px) {
   .decorate-choose {
     margin-top: 40px;
@@ -580,6 +628,14 @@ body {
 
   .reg__input, .login__input {
     width: 260px;
+  }
+
+  .btn-container--modifed {
+    width: 475px;
+  }
+
+  .btn-container--modifed {
+    margin-top: 39px;   
   }
 }
 
@@ -668,5 +724,28 @@ body {
 
   .level-container {
     min-height: 163px;
+  }
+
+  .btn-container--modifed {
+    margin-top: 54px;
+    width: 525px;
+  }
+
+  .btn-container__btn--modifed {
+    width: 165px;
+    height: 52px;
+    padding-top: 0px;
+  }
+
+  .main__task {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .main__route-btn {
+    width: 281px;
+    height: 65px;
+    padding-top: 19px;
+    padding-left: 30px;
   }
 }
