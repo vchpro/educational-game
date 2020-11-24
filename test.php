@@ -87,7 +87,7 @@
         if($data2["other"] == "good") {
            echo "
                 <div class='check-result'>
-                    <span class='check-result__good'>Верно</span>
+                    <span class='check-result__good'>Молодец!</span>
                     <span class='check-result__text'>+5 очков</span>
                 </div>
 
@@ -103,7 +103,7 @@
         else {
             echo "
                 <div class='check-result'>
-                    <span class='check-result__bad'>Неверно</span>
+                    <span class='check-result__bad'>Не отчаивайся!</span>
                     <span class='check-result__text'>+0 очков</span>
                 </div>
 
