@@ -1,3 +1,10 @@
+<?php
+    require 'db.php';
+    if (! isset($_SESSION['logged_user']) ) {
+        echo "<script>document.location.href = '/index.php';</script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -21,8 +28,8 @@
             <div class="absolute-container">
                 <button type="button" class="auth header-container__auth profile">Профиль</button>
                 <div class="profile-container">
-                    <p class="profile-container__text">Количество очков: 1200</p>
-                    <a href="#" class="profile-container__logout">Выйти</a>
+                    <p class="profile-container__text">Количество очков: <?php echo $user->points; ?></p>
+                    <a href="logout.php" class="profile-container__logout">Выйти</a>
                 </div>
             </div>
         </div>
@@ -37,7 +44,7 @@
             <div class="level-container">
                 <p class="level-container__header">1 уровень</p>
                 <p class="level-container__text">Математические примеры</p>
-                <button type="button" class="btn level-container__button">Выбрать</button>
+                <button type="button" class="btn level-container__button" onclick="document.location.href = '/test.php?type=math&level=1';">Выбрать</button>
             </div>
             </article>
 
@@ -46,7 +53,7 @@
             <div class="level-container">
                 <p class="level-container__header">2 уровень</p>
                 <p class="level-container__text">Задачи на скорость</p>
-                <button type="button" class="btn level-container__button">Выбрать</button>
+                <button type="button" class="btn level-container__button" onclick="document.location.href = '/test.php?type=math&level=2';">Выбрать</button>
             </div>
             </article>
         </section>
@@ -59,7 +66,7 @@
                 <span class="visually-hidden">Закрыть меню</span>
             </span>
         </div>
-    <button type="button" class="mobile-menu__auth main__auth auth">ВЫЙТИ</button>
+    <button type="button" class="mobile-menu__auth main__auth auth" onclick="document.location.href = '/logout.php';">ВЫЙТИ</button>
 
     <ul class="social">
         <li class="social__item facebook">

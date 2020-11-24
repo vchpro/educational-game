@@ -1,10 +1,20 @@
 <?php 
-require 'libs/rb.php';
+require 'lib/rb.php';
 R::setup( 'mysql:host=127.0.0.1;dbname=site','root', 'root' ); 
 
 if ( !R::testconnection() )
 {
-		exit ('Нет соединения с базой данных');
+	exit ('Нет соединения с базой данных');
 }
 
 session_start();
+
+$user;
+
+if (isset($_SESSION['logged_user']) ) {
+     $user = R::findOne('users', 'email = ?', array($_SESSION['logged_user']));
+     if (! $user ) {
+     	// Critical error
+     	unset($_SESSION['logged_user']);
+     }
+}
