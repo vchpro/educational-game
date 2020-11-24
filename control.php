@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
-    <title>Educational Game | Выбор уровня</title>
+    <title>Educational Game | Контрольные задачи</title>
 </head>
 <body>
     <header class="header">
         <div class="header-container header-container--modifed">
             <h1 class="header-container__heading">
-                <a href="choose.html">Educational Game</a>
+                <a href="choose.php">Educational Game</a>
             </h1>
             <span class="header-container__burger">
                 <span class="visually-hidden">Меню</span>
@@ -26,30 +26,22 @@
                 </div>
             </div>
         </div>
-    <p class="main__text main__text--modifed">Выберите уровень</p>
     </header>
 
-    <main class="main main--modifed">
-        <section class="levels">
-            <h1 class="visually-hidden">Уровни</h1>
-            <article class="level">
-                <img class="level__img level__img--one" src="img/math-1.png">
-            <div class="level-container">
-                <p class="level-container__header">1 уровень</p>
-                <p class="level-container__text">Математические примеры</p>
-                <button type="button" class="btn level-container__button">Выбрать</button>
-            </div>
-            </article>
+    <main class="main">
+        <p class="main__text">Контрольные задачи</p>
 
-            <article class="level">
-                <img class="level__img level__img--two" src="img/math-2.svg">
-            <div class="level-container">
-                <p class="level-container__header">2 уровень</p>
-                <p class="level-container__text">Задачи на скорость</p>
-                <button type="button" class="btn level-container__button">Выбрать</button>
-            </div>
-            </article>
-        </section>
+        <!-- Нужно заполнить action!!! -->
+        <form class="control-form" method="post">
+            <input type="text" name="count" maxlength="64" class="control-form__input" placeholder="Ставка">
+            <button type="submit" name="do_control" class="control-form__button">
+                <span class="visually-hidden">Начать</span>
+            </button>
+        </form>
+    
+        <div class="decorate decorate-choose">
+            <span class="visually-hidden">Наша платформа создана для дошкольников и школьников младших классов</span>
+        </div>
     </main>
 
     <section class="mobile-menu hide">

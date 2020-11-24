@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
-    <title>Educational Game | Рейтинг</title>
+    <title>Educational Game | Выбор категории</title>
 </head>
 <body>
     <header class="header">
         <div class="header-container header-container--modifed">
             <h1 class="header-container__heading">
-                <a href="choose.html">Educational Game</a>
+                <a>Educational Game</a>
             </h1>
             <span class="header-container__burger">
                 <span class="visually-hidden">Меню</span>
@@ -26,25 +26,19 @@
                 </div>
             </div>
         </div>
-    <p class="main__text main__text--modifed">Рейтинг</p>
     </header>
 
-    <main class="main main--modifed">
-        <section class="rate">
-            <div class="rate__item rate__item--first">
-                <span class="rate-name">Владислав</span>
-            </div>
+    <main class="main">
+        <p class="main__text">Выберите раздел</p>
 
-            <div class="rate__item rate__item--second">
-                <span class="rate-name">Владислав</span>
-            </div>
-
-            <div class="rate__item rate__item--third">
-                <span class="rate-name">Владислав</span>
-            </div>
-        </section>
-
-        <span class="your-rate">Ваше место: 155</span>
+        <div class="btn-container">
+            <a href="math.php" class="btn-container__btn btn">Математика</a>
+            <a href="logic.php" class="btn-container__btn btn">Логика</a>
+        </div>
+    
+        <div class="decorate decorate-choose">
+            <span class="visually-hidden">Наша платформа создана для дошкольников и школьников младших классов</span>
+        </div>
     </main>
 
     <section class="mobile-menu hide">
