@@ -18,3 +18,15 @@ if (isset($_SESSION['logged_user']) ) {
      	unset($_SESSION['logged_user']);
      }
 }
+
+$url = $_SERVER['REQUEST_URI'];
+
+$url = explode('?', $url);
+
+$url = $url[0];
+
+ 
+if($user->ans != 0 && $url != "/test.php" && $url != "/check.php") {
+	$user->ans = 0;
+	R::store($user);
+}

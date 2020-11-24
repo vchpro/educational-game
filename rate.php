@@ -51,7 +51,7 @@
             </div>
         </section>
 
-        <span class="your-rate">Ваше место: 155</span>
+        <span class="your-rate">Ваше место: 155 (1000 очков)</span>
     </main>
 
     <section class="mobile-menu hide">

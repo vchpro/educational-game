@@ -12,67 +12,9 @@
     function generate_math_1() {
         global $user;
         global $question;
-        switch (rand(1, 12)) {
-            case 1:
-                $question = "100 + 30";
-                $user->ans = 130;
-            break;
+        $question = R::findOne('questions', 'id = ?', array(rand(1, 12)));
 
-            case 2:
-                $question = "80 / 2";
-                $user->ans = 40;
-            break;
-
-            case 3:
-                $question = "35 + 9 / 3";
-                $user->ans = 38;
-            break;
-
-            case 4:
-                $question = "7 / 7 + 30";
-                $user->ans = 31;
-            break;
-
-            case 5:
-                $question = "35 : (5 + 2)";
-                $user->ans = 5;
-            break;
-
-            case 6:
-                $question = "101 - 12";
-                $user->ans = 89;
-            break;
-
-            case 7:
-                $question = "155 - 74 + 1";
-                $user->ans = 82;
-            break;
-
-            case 8:
-                $question = "77 + 33";
-                $user->ans = 110;
-            break;
-
-            case 9:
-                $question = "0 - 5 + 7";
-                $user->ans = 2;
-            break;
-
-            case 10:
-                $question = "(95 - 47) / 2";
-                $user->ans = 24;
-            break;
-
-            case 11:
-                $question = "(8 + 4) / 3";
-                $user->ans = 4;
-            break;
-
-            case 12:
-                $question = "12 - 5 + 55 / 5";
-                $user->ans = 18;
-            break;
-        }
+        $user->ans = $question->ans;
 
         R::store($user);
     }
@@ -125,6 +67,42 @@
     <title>Educational Game | Прохождение уровня</title>
 </head>
 <body>
+
+    <?php
+        if(isset($data2["other"])) {
+        if($data2["other"] == "good") {
+           echo "
+                <div class='check-result'>
+                    <span class='check-result__good'>Верно</span>
+                    <span class='check-result__text'>+5 очков</span>
+                </div>
+
+                <script>
+                    tmp = document.querySelector('.check-result');
+                    setTimeout(function() {
+                        tmp.classList.add('hide');
+                    },3000);
+                </script>
+            ";
+        }
+
+        else {
+            echo "
+                <div class='check-result'>
+                    <span class='check-result__bad'>Неверно</span>
+                    <span class='check-result__text'>+0 очков</span>
+                </div>
+
+                <script>
+                    tmp = document.querySelector('.check-result');
+                    setTimeout(function() {
+                        tmp.classList.add('hide');
+                    },3000);
+                </script>
+            ";
+        }
+    }
+    ?>
     <header class="header">
         <div class="header-container header-container--modifed">
             <h1 class="header-container__heading">
@@ -145,7 +123,7 @@
     </header>
 
     <main class="main main--modifed">
-        <p class="main__task"> <?php echo $question; ?> </p>
+        <p class="main__task"> <?php echo $question->question; ?> </p>
 
         <form class="btn-container btn-container--modifed" method="post">
             <?php
@@ -153,26 +131,32 @@
                 $btn2;
                 $btn3;
 
-                $tmp = rand(1, 3);
-                switch($tmp) {
-                    case 1:
-                        $btn1 = $user->ans;
-                        $btn2 = rand($user->ans - 20, $user->ans + 20);
-                        $btn3 = rand($user->ans - 20, $user->ans + 20);
-                    break;
+                if($data2["type"] == "math" && $data2["level"] == 1) {
+                    $tmp = rand(1, 3);
+                    switch($tmp) {
+                        case 1:
+                            $btn1 = $user->ans;
+                            $btn2 = rand($user->ans - 20, $user->ans + 20);
+                            $btn3 = rand($user->ans - 20, $user->ans + 20);
+                        break;
 
-                    case 2:
-                        $btn1 = rand($user->ans - 20, $user->ans + 20);
-                        $btn2 = $user->ans;
-                        $btn3 = rand($user->ans - 20, $user->ans + 20);
-                    break;
+                        case 2:
+                            $btn1 = rand($user->ans - 20, $user->ans + 20);
+                            $btn2 = $user->ans;
+                            $btn3 = rand($user->ans - 20, $user->ans + 20);
+                        break;
 
-                    case 3:
-                        $btn1 = rand($user->ans - 20, $user->ans + 20);
-                        $btn2 = rand($user->ans - 20, $user->ans + 20);
-                        $btn3 = $user->ans;
-                    break;
-                }
+                        case 3:
+                            $btn1 = rand($user->ans - 20, $user->ans + 20);
+                            $btn2 = rand($user->ans - 20, $user->ans + 20);
+                            $btn3 = $user->ans;
+                        break;
+                    }
+            }
+
+            else if($data2["type"] == "math" && $data2["level"] == 2) {
+
+            }
 
                 $uniTXT = "?type=".$data2["type"]."&level=".$data2["level"]."&ans=";
             ?>

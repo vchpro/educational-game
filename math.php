@@ -48,14 +48,19 @@
             </div>
             </article>
 
+        <?php
+        if($user->math_level >= 10) {
+            echo '
             <article class="level">
                 <img class="level__img level__img--two" src="img/math-2.svg">
             <div class="level-container">
                 <p class="level-container__header">2 уровень</p>
                 <p class="level-container__text">Задачи на скорость</p>
-                <button type="button" class="btn level-container__button" onclick="document.location.href = '/test.php?type=math&level=2';">Выбрать</button>
+                <button type="button" class="btn level-container__button" onclick="'."document.location.href = '/test.php?type=math&level=2';".'">Выбрать</button>
             </div>
             </article>
+            ';}
+        ?>
         </section>
     </main>
 
