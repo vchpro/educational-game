@@ -19,13 +19,27 @@
         R::store($user);
     }
 
+    function generate_math_2() {
+        global $user;
+        global $question;
+        $question = R::findOne('questions', 'id = ?', array(rand(13, 15)));
+
+        $user->ans = $question->ans;
+
+        R::store($user);
+    }
+
     if(isset ($data2["type"]) && isset ($data2["level"])) {
         switch($data2["type"]) {
             case "math":
-                if((int)$data2["level"] == 1 || (int)$data2["level"] * 10 <= $user->math_level) {
+                if((int)$data2["level"] == 1 || (int)$data2["level"] * 5 <= (int)$user->math_level) {
                     switch($data2["level"]) {
                         case 1:
                             generate_math_1();
+                        break;
+
+                        case 2:
+                            generate_math_2();
                         break;
 
                         default:
@@ -131,8 +145,9 @@
                 $btn2;
                 $btn3;
 
+                $tmp = rand(1, 3);
+
                 if($data2["type"] == "math" && $data2["level"] == 1) {
-                    $tmp = rand(1, 3);
                     switch($tmp) {
                         case 1:
                             $btn1 = $user->ans;
@@ -155,7 +170,25 @@
             }
 
             else if($data2["type"] == "math" && $data2["level"] == 2) {
+                    switch($tmp) {
+                        case 1:
+                            $btn1 = $question->ans;
+                            $btn2 = $question->a1;
+                            $btn3 = $question->a2;
+                        break;
 
+                        case 2:
+                            $btn1 = $question->a1;
+                            $btn2 = $user->ans;
+                            $btn3 = $question->a2;
+                        break;
+
+                        case 3:
+                            $btn1 = $question->a1;
+                            $btn2 = $question->a2;
+                            $btn3 = $user->ans;
+                        break;
+                    }
             }
 
                 $uniTXT = "?type=".$data2["type"]."&level=".$data2["level"]."&ans=";
