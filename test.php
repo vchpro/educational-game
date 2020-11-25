@@ -47,7 +47,7 @@
     if(isset ($data2["type"]) && isset ($data2["level"])) {
         switch($data2["type"]) {
             case "math":
-                if((int)$data2["level"] == 1 || (int)$data2["level"] * 5 <= (int)$user->math_level) {
+                if((int)$data2["level"] == 1 || (int)$data2["level"] * 5 <= (int)$user->math_level || $user->control == 2) {
                     switch($data2["level"]) {
                         case 1:
                             generate_math_1();
@@ -180,19 +180,37 @@
                     switch($tmp) {
                         case 1:
                             $btn1 = $user->ans;
-                            $btn2 = rand($user->ans - 20, $user->ans + 20);
-                            $btn3 = rand($user->ans - 20, $user->ans + 20);
+                            $btn2 = $user->ans;
+                            while($btn2 == $user->ans) {
+                                $btn2 = rand($user->ans - 20, $user->ans + 20);
+                            }
+                            $btn3 = $user->ans;
+                            while($btn3 == $user->ans) {
+                                $btn3 = rand($user->ans - 20, $user->ans + 20);
+                            }
                         break;
 
                         case 2:
-                            $btn1 = rand($user->ans - 20, $user->ans + 20);
+                            $btn1 = $user->ans;
+                            while($btn1 == $user->ans) {
+                                $btn1 = rand($user->ans - 20, $user->ans + 20);
+                            }
                             $btn2 = $user->ans;
-                            $btn3 = rand($user->ans - 20, $user->ans + 20);
+                            $btn3 = $user->ans;
+                            while($btn3 == $user->ans) {
+                                $btn3 = rand($user->ans - 20, $user->ans + 20);
+                            }
                         break;
 
                         case 3:
-                            $btn1 = rand($user->ans - 20, $user->ans + 20);
-                            $btn2 = rand($user->ans - 20, $user->ans + 20);
+                            $btn1 = $user->ans;
+                            while($btn1 == $user->ans) {
+                                $btn1 = rand($user->ans - 20, $user->ans + 20);
+                            }
+                            $btn2 = $user->ans;
+                            while($btn2 == $user->ans) {
+                                $btn2 = rand($user->ans - 20, $user->ans + 20);
+                            }
                             $btn3 = $user->ans;
                         break;
                     }
