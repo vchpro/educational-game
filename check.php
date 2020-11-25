@@ -38,6 +38,9 @@
                         echo "<script>document.location.href = '/control.php?bad=".$tmp."';</script>";
                     }
                     else {
+                        if($user->points >= 2) {
+                            $user->points -= 2;
+                        }
                         $user->ans = "NONE312";
                         R::store($user);
                         echo "<script>document.location.href = '/test.php?other=bad&type=math&level=".$data2["level"]."';</script>";
@@ -71,7 +74,10 @@
                         echo "<script>document.location.href = '/control.php?bad=".$tmp."';</script>";
                     }
                     else {
-                	    $user->ans = "NONE312";
+                        if($user->points >= 2) {
+                            $user->points -= 2;
+                        }
+                        $user->ans = "NONE312";
         			    R::store($user);
                         echo "<script>document.location.href = '/test.php?other=bad&type=logic&level=".$data2["level"]."';</script>";
                     }
@@ -88,6 +94,10 @@
                         echo "<script>document.location.href = '/choose.php?good=1".$tmp."';</script>";
         		}
                 else {
+                    if($user->points >= 20) {
+                        $user->points -= 20;
+                    }
+                    R::store($user);
                     echo "<script>document.location.href = '/choose.php?bad=1".$tmp."';</script>";
                 }
             break;

@@ -18,6 +18,3 @@
         R::store($user);
         echo "<script>document.location.href = '/logic.php';</script>";
     }
-
-
-?>

@@ -169,7 +169,7 @@
             echo "
                 <div class='check-result'>
                     <span class='check-result__bad'>Не отчаивайся!</span>
-                    <span class='check-result__text'>+0 очков</span>
+                    <span class='check-result__text'>-2 очка</span>
                 </div>
 
                 <script>

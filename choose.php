@@ -42,7 +42,7 @@
             echo "
             <div class='error'>
                 <span class='error__heading'>Не отчаивайся!</span>
-                <span class='error__text'>+0 очков</span>
+                <span class='error__text'>-20 очков</span>
             </div>
 
             <script>
