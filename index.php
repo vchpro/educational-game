@@ -36,7 +36,7 @@
                 $errors[] = 'Неверно введен пароль!';
             }
 
-        }else
+        } else
         {
             $errors[] = 'Пользователь с такой почтой не найден!';
         }
@@ -80,7 +80,7 @@
     
         if ( R::count('users', "email = ?", array($data['user_email'])) > 0)
         {
-            $errors[] = 'Пользователь с таким Email уже существует!';
+            $errors[] = 'Пользователь с таким Email уже существует';
         }
 
         if(strlen($data['user_name']) > 64) {
@@ -93,6 +93,11 @@
 
         if(strlen($data['user_pass']) > 128) {
             $errors[] = 'Пароль должен состоять не более чем из 128 символов';
+        }
+
+        if (filter_var($data['user_email'], FILTER_VALIDATE_EMAIL) === false)
+        {
+            $errors[] = 'Введите корректную почту';
         }
 
 
