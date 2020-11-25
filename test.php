@@ -4,6 +4,11 @@
         echo "<script>document.location.href = '/index.php';</script>";
     }
 
+    if($user->checkcontrol != 0) {
+        $user->checkcontrol += 1;
+        R::store($user);
+    }
+
     $data = $_POST;
     $data2 = $_GET;
 
@@ -22,7 +27,7 @@
     function generate_math_2() {
         global $user;
         global $question;
-        $question = R::findOne('questions', 'id = ?', array(rand(13, 15)));
+        $question = R::findOne('questions', 'id = ?', array(rand(13, 23)));
 
         $user->ans = $question->ans;
 
@@ -32,7 +37,7 @@
     function generate_logic_1() {
         global $user;
         global $question;
-        $question = R::findOne('questions', 'id = ?', array(rand(16, 18)));
+        $question = R::findOne('questions', 'id = ?', array(rand(24, 39)));
 
         $user->ans = $question->ans;
 
@@ -171,7 +176,7 @@
 
                 $tmp = rand(1, 3);
 
-                if($data2["type"] == "math" && $data2["level"] == 1) {
+                if($question->type == "number") {
                     switch($tmp) {
                         case 1:
                             $btn1 = $user->ans;
@@ -193,7 +198,7 @@
                     }
             }
 
-            else if(($data2["type"] == "math" && $data2["level"] == 2) || ($data2["type"] == "logic" && $data2["level"] == 1)) {
+            else if($question->type = "text") {
                     switch($tmp) {
                         case 1:
                             $btn1 = $question->ans;

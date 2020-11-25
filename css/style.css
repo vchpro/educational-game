@@ -779,7 +779,16 @@ body {
   text-decoration: none;
 }
 
+.main__task img {
+  width: 320px;
+}
+
 @media (min-width: 768px) {
+  .main__task img {
+    width: 400px;
+  }
+
+
   .main__task {
     width: 600px;
   }
@@ -843,6 +852,10 @@ body {
 }
 
 @media (min-width: 1400px) {
+  .main__task img {
+    width: 450px;
+  }
+
   .main__task {
     width: 1200px;
   }

@@ -28,5 +28,6 @@ $url = $url[0];
  
 if($user->ans != 0 && $url != "/test.php" && $url != "/check.php") {
 	$user->ans = 0;
+	$user->control = 0;
 	R::store($user);
 }

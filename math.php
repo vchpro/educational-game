@@ -44,7 +44,7 @@
                 <img class="level__img level__img--one" src="img/math-1.png">
             <div class="level-container">
                 <p class="level-container__header">1 уровень</p>
-                <p class="level-container__text">Математические примеры</p>
+                <p class="level-container__text">Начальный уровень</p>
                 <button type="button" class="btn level-container__button" onclick="document.location.href = '/test.php?type=math&level=1';">Выбрать</button>
             </div>
             </article>
@@ -56,7 +56,7 @@
                 <img class="level__img level__img--two" src="img/math-2.svg">
             <div class="level-container">
                 <p class="level-container__header">2 уровень</p>
-                <p class="level-container__text">Задачи на скорость</p>
+                <p class="level-container__text">Продвинутый уровень</p>
                 <button type="button" class="btn level-container__button" onclick="'."document.location.href = '/test.php?type=math&level=2';".'">Выбрать</button>
             </div>
             </article>
