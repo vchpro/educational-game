@@ -1,6 +1,6 @@
 <?php 
 require 'lib/rb.php';
-R::setup( 'mysql:host=127.0.0.1;dbname=cj75139_test','cj75139_test', 'sxQgQY8w' ); 
+R::setup( 'mysql:host=127.0.0.1;dbname=cj75139_test123','cj75139_test123', 'cj75139_test123' ); 
 
 if ( !R::testconnection() )
 {
@@ -26,7 +26,7 @@ $url = explode('?', $url);
 $url = $url[0];
 
  
-if($user->ans != 0 && $url != "/test.php" && $url != "/check.php") {
+if($url != "/test.php" && $url != "/check.php") {
 	$user->ans = 0;
 	$user->control = 0;
 	R::store($user);

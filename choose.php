@@ -3,6 +3,10 @@
     if (! isset($_SESSION['logged_user']) ) {
         echo "<script>document.location.href = '/index.php';</script>";
     }
+
+    $data2 = $_GET;
+
+    $question = R::findOne('questions', 'id = ?', array(0));
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +21,42 @@
     <title>Educational Game | Выбор категории</title>
 </head>
 <body>
+    <?php
+        if(isset($data2["good"])) {
+            echo "
+            <div class='error'>
+                <span class='error__heading error__heading--modifed'>Молодец</span>
+                <span class='error__text'>+50 очков</span>
+            </div>
+
+            <script>
+                tmp = document.querySelector('.error');
+                setTimeout(function() {
+                    tmp.classList.add('hide');
+                },3000);
+            </script>
+        ";
+        }
+
+        if(isset($data2["bad"])) {
+            echo "
+            <div class='error'>
+                <span class='error__heading'>Не отчаивайся</span>
+                <span class='error__text'>+0 очков</span>
+            </div>
+
+            <script>
+                tmp = document.querySelector('.error');
+                setTimeout(function() {
+                    tmp.classList.add('hide');
+                },3000);
+            </script>
+        ";
+        }
+
+
+
+    ?>
     <header class="header">
         <div class="header-container header-container--modifed">
             <h1 class="header-container__heading">
@@ -46,7 +86,107 @@
             <a href="rate.php" class="btn-container__btn btn">Рейтинг</a>
             <a href="control.php" class="btn-container__btn btn">Контрольные</a>
         </div>
-    
+
+        <div class="today-example">
+            <form action="check.php" method="post" class="today-form">
+                <h2 class="today-form__heading">Задача дня</h2>
+                <span class="today-form__text"><?php echo $question->question; ?></span>
+
+                <div class="btn-container btn-container--modifed today-form__container" method="post">
+            <?php
+                if($user->today_complete == 0) {
+
+
+                    $btn1;
+                    $btn2;
+                    $btn3;
+
+                    $tmp = rand(1, 3);
+
+                    if($question->type == "number") {
+                        switch($tmp) {
+                            case 1:
+                                $btn1 = $user->ans;
+                                $btn2 = $user->ans;
+                                while($btn2 == $user->ans) {
+                                    $btn2 = rand($user->ans - 20, $user->ans + 20);
+                                }
+                                $btn3 = $user->ans;
+                                while($btn3 == $user->ans) {
+                                    $btn3 = rand($user->ans - 20, $user->ans + 20);
+                                }
+                            break;
+
+                            case 2:
+                                $btn1 = $user->ans;
+                                while($btn1 == $user->ans) {
+                                    $btn1 = rand($user->ans - 20, $user->ans + 20);
+                                }
+                                $btn2 = $user->ans;
+                                $btn3 = $user->ans;
+                                while($btn3 == $user->ans) {
+                                    $btn3 = rand($user->ans - 20, $user->ans + 20);
+                                }
+                            break;
+
+                            case 3:
+                                $btn1 = $user->ans;
+                                while($btn1 == $user->ans) {
+                                    $btn1 = rand($user->ans - 20, $user->ans + 20);
+                                }
+                                $btn2 = $user->ans;
+                                while($btn2 == $user->ans) {
+                                    $btn2 = rand($user->ans - 20, $user->ans + 20);
+                                }
+                                $btn3 = $user->ans;
+                            break;
+                        }
+                    }
+
+                    else if($question->type = "text") {
+                            switch($tmp) {
+                                case 1:
+                                    $btn1 = $question->ans;
+                                    $btn2 = $question->a1;
+                                    $btn3 = $question->a2;
+                                break;
+
+                                case 2:
+                                    $btn1 = $question->a1;
+                                    $btn2 = $question->ans;
+                                    $btn3 = $question->a2;
+                                break;
+
+                                case 3:
+                                    $btn1 = $question->a1;
+                                    $btn2 = $question->a2;
+                                    $btn3 = $question->ans;
+                                break;
+                            }
+                        }
+                    $uniTXT = "?type=day&level=0&ans=";
+                }
+
+            ?>
+            <?php
+            if($user->today_complete == 0) {
+                echo "
+                
+                <button type='button' class='btn-container__btn btn-container__btn--modifed btn' onclick=\"document.location.href = '/check.php".$uniTXT.$btn1."';\">$btn1</button>
+                <button type='button' class='btn-container__btn btn-container__btn--modifed btn' onclick=\"document.location.href = '/check.php".$uniTXT.$btn2."';\">$btn2</button>
+                <button type='button' class='btn-container__btn btn-container__btn--modifed btn' onclick=\"document.location.href = '/check.php".$uniTXT.$btn3."';\">$btn3</button>
+                
+                ";
+            }
+
+            else {
+                echo "<span class='today-form__completed'>Вы уже решили задачу :)</span>";
+            }
+
+            ?>
+        </div>
+            </form>
+        </div>
         <div class="decorate decorate-choose">
             <span class="visually-hidden">Наша платформа создана для дошкольников и школьников младших классов</span>
         </div>

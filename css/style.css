@@ -750,6 +750,10 @@ body {
   margin: 0 auto;
 }
 
+.error__heading--modifed {
+  color: #46BE28;
+}
+
 .error__text {
   display: block;
   margin: 0 auto;
@@ -787,11 +791,64 @@ body {
   width: 320px;
 }
 
+.today-example {
+  min-height: 325px;
+  margin-top: 47px;
+}
+
+.today-form {
+  display: block;
+  width: 320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 3px solid #169DFF;
+}
+
+.today-form__heading {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 18px;
+  color: #E6E8F1;
+  text-align: center;
+}
+
+.today-form__text {
+  display: block;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+  color: #E6E8F1;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 44px;
+}
+
+.today-form__container {
+  margin-top: 40px;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.today-form__completed {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #4AC400;
+  margin-top: 84px;
+  text-align: center;
+}
+
+
 @media (min-width: 768px) {
   .main__task img {
     width: 400px;
   }
-
 
   .main__task {
     width: 600px;
@@ -852,6 +909,22 @@ body {
 
   .btn-container--modifed {
     margin-top: 39px;   
+  }
+
+  .today-form__container {
+    width: 480px;
+  }
+
+  .today-form {
+    width: 480px;
+  }
+
+  .today-form__completed {
+    margin-top: 10px;
+  }
+
+  .today-form__text {
+    width: 400px;
   }
 }
 
@@ -1088,5 +1161,17 @@ body {
 
   .friend-card__name {
     font-size: 22px;
+  }
+
+  .today-form__container {
+    width: 560px;
+  }
+
+  .today-form {
+    width: 560px;
+  }
+
+  .today-form__text {
+    width: 480px;
   }
 }

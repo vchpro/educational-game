@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Ноя 25 2020 г., 11:26
+-- Время создания: Ноя 25 2020 г., 13:12
 -- Версия сервера: 5.6.44-86.0
 -- Версия PHP: 5.6.40
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `cj75139_test`
+-- База данных: `cj75139_test123`
 --
 
 -- --------------------------------------------------------
@@ -54,13 +54,14 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `a1` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
   `a2` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `questions`
 --
 
 INSERT INTO `questions` (`id`, `type`, `question`, `ans`, `a1`, `a2`) VALUES
+(0, 'text', 'Шесть плотников и столяр нанялись на работу. Плотники заработали по 20 руб., столяр же – на 3 руб. больше, чем заработал в среднем каждый из семерых.\r\nСколько заработал столяр?', '23.5 руб', '138 руб', '23 руб'),
 (1, 'number', '2+2', '4', '', ''),
 (2, 'number', '32+50', '82', '', ''),
 (3, 'number', '24 * 2', '48', '', ''),
@@ -118,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `ans` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `control` int(11) NOT NULL DEFAULT '0',
   `checkcontrol` int(11) NOT NULL DEFAULT '0',
+  `today_complete` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -125,10 +127,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `name`, `password`, `points`, `math_level`, `logic_level`, `ans`, `control`, `checkcontrol`) VALUES
-(4, 'mail.vchpro@yandex.ru', 'Влад', '$2y$10$0iF3h02o/U0nMTdM8dTpnuu4ZB5bzdmpxeSlO/PlXHwNAcOnvrJBO', 99999, 1, 1, '0', 0, 0),
-(7, '200@gmail.com', 'Ленусёк', '$2y$10$BOre42XVLsqVGMAnz6QJYO5aUndJ4ak1K83f2INLVKCqTksQl.Ojq', 0, 1, 9, '0', 40, 2),
-(8, 'говкошмык', 'Толик', '$2y$10$PrP0IZ6fl09I5wX9XDZfluHH22xCJwHRuE3zUNZ6wDNggjB8uWrk6', 99850, 14, 7, '0', 100, 0);
+INSERT INTO `users` (`id`, `email`, `name`, `password`, `points`, `math_level`, `logic_level`, `ans`, `control`, `checkcontrol`, `today_complete`) VALUES
+(4, 'mail.vchpro@yandex.ru', 'Влад', '$2y$10$0iF3h02o/U0nMTdM8dTpnuu4ZB5bzdmpxeSlO/PlXHwNAcOnvrJBO', 100002, 1, 1, '0', 0, 0, 1),
+(7, '200@gmail.com', 'Ленусёк', '$2y$10$BOre42XVLsqVGMAnz6QJYO5aUndJ4ak1K83f2INLVKCqTksQl.Ojq', 0, 1, 9, '0', 40, 2, 0),
+(8, 'говкошмык', 'Толик', '$2y$10$PrP0IZ6fl09I5wX9XDZfluHH22xCJwHRuE3zUNZ6wDNggjB8uWrk6', 99850, 14, 7, '0', 100, 0, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

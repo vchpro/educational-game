@@ -84,7 +84,8 @@
     if(isset ($data2["type"]) && isset ($data2["level"])) {
         switch($data2["type"]) {
             case "math":
-                if((int)$data2["level"] == 1 || (int)$data2["level"] * 5 <= (int)$user->math_level || $user->control == 2) {
+                var_dump($user->control);
+                if((int)$data2["level"] == 1 || (int)$user->math_level > 13 || $user->checkcontrol == 2) {
                     switch($data2["level"]) {
                         case 1:
                             generate_math_1();

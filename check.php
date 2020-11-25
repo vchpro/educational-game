@@ -3,7 +3,7 @@
     $data = $_POST;
     $data2 = $_GET;
 
-    if($user->ans == "0") {
+    if($user->ans == "0" && $data2["type"] != "day") {
         echo "<script>document.location.href = '/choose.php';</script>";
         die;
     }
@@ -75,6 +75,20 @@
         			    R::store($user);
                         echo "<script>document.location.href = '/test.php?other=bad&type=logic&level=".$data2["level"]."';</script>";
                     }
+                }
+            break;
+
+
+            case "day":
+                $question = R::findOne('questions', 'id = ?', array(0));
+                if($data2["ans"] == $question->ans) {
+                        $user->points += 50;
+                        $user->today_complete = 1;
+                        R::store($user);
+                        echo "<script>document.location.href = '/choose.php?good=1".$tmp."';</script>";
+        		}
+                else {
+                    echo "<script>document.location.href = '/choose.php?bad=1".$tmp."';</script>";
                 }
             break;
 
