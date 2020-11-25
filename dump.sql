@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Ноя 25 2020 г., 10:13
--- Версия сервера: 5.6.47
--- Версия PHP: 7.1.33
+-- Хост: localhost
+-- Время создания: Ноя 25 2020 г., 11:26
+-- Версия сервера: 5.6.44-86.0
+-- Версия PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `site`
+-- База данных: `cj75139_test`
 --
 
 -- --------------------------------------------------------
@@ -27,11 +26,19 @@ SET time_zone = "+00:00";
 -- Структура таблицы `friends`
 --
 
-CREATE TABLE `friends` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `friends` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user1` int(11) NOT NULL,
-  `user2` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `user2` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `friends`
+--
+
+INSERT INTO `friends` (`id`, `user1`, `user2`) VALUES
+(3, 4, 6);
 
 -- --------------------------------------------------------
 
@@ -39,14 +46,15 @@ CREATE TABLE `friends` (
 -- Структура таблицы `questions`
 --
 
-CREATE TABLE `questions` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `questions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'number',
   `question` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ans` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
   `a1` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `a2` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `a2` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `questions`
@@ -86,8 +94,8 @@ INSERT INTO `questions` (`id`, `type`, `question`, `ans`, `a1`, `a2`) VALUES
 (31, 'number', '<img src=\"img/tests/1.png\">', '6', '', ''),
 (32, 'number', '<img src=\"img/tests/2.png\">', '0', '', ''),
 (33, 'number', '<img src=\"img/tests/3.png\">', '10', '', ''),
-(34, 'number', '<img src=\"img/tests/4.png\">', '-15', '', ''),
-(35, 'number', '<img src=\"img/tests/5.png\">', '11', '', ''),
+(34, 'number', '<img src=\"img/tests/4.png\">', '16', '', ''),
+(35, 'number', '<img src=\"img/tests/5.png\">', '21', '', ''),
 (36, 'number', '<img src=\"img/tests/6.png\">', '1', '', ''),
 (37, 'number', '<img src=\"img/tests/7.png\">', '93', '', ''),
 (38, 'number', '<img src=\"img/tests/8.png\">', '31', '', ''),
@@ -99,71 +107,28 @@ INSERT INTO `questions` (`id`, `type`, `question`, `ans`, `a1`, `a2`) VALUES
 -- Структура таблицы `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
   `points` int(11) NOT NULL DEFAULT '0',
-  `math_level` int(11) NOT NULL DEFAULT '0',
-  `logic_level` int(11) NOT NULL DEFAULT '0',
+  `math_level` int(11) NOT NULL DEFAULT '1',
+  `logic_level` int(11) NOT NULL DEFAULT '1',
   `ans` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `control` int(11) NOT NULL DEFAULT '0',
-  `checkcontrol` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `checkcontrol` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `name`, `password`, `points`, `math_level`, `logic_level`, `ans`, `control`, `checkcontrol`) VALUES
-(4, 'mail.vchpro@yandex.ru', 'Влад', '$2y$10$0iF3h02o/U0nMTdM8dTpnuu4ZB5bzdmpxeSlO/PlXHwNAcOnvrJBO', 1100, 31, 7, '0', 0, 0),
-(5, 'test@mail.ru', 'Тестер', '$2y$10$0iF3h02o/U0nMTdM8dTpnuu4ZB5bzdmpxeSlO/PlXHwNAcOnvrJBO', 130, 25, 2, '15 раз', 0, 0);
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `friends`
---
-ALTER TABLE `friends`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `questions`
---
-ALTER TABLE `questions`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `friends`
---
-ALTER TABLE `friends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `questions`
---
-ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
---
--- AUTO_INCREMENT для таблицы `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-COMMIT;
+(4, 'mail.vchpro@yandex.ru', 'Влад', '$2y$10$0iF3h02o/U0nMTdM8dTpnuu4ZB5bzdmpxeSlO/PlXHwNAcOnvrJBO', 99999, 1, 1, '0', 0, 0),
+(7, '200@gmail.com', 'Ленусёк', '$2y$10$BOre42XVLsqVGMAnz6QJYO5aUndJ4ak1K83f2INLVKCqTksQl.Ojq', 0, 1, 9, '0', 40, 2),
+(8, 'говкошмык', 'Толик', '$2y$10$PrP0IZ6fl09I5wX9XDZfluHH22xCJwHRuE3zUNZ6wDNggjB8uWrk6', 99850, 14, 7, '0', 100, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
