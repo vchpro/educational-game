@@ -3,6 +3,8 @@
     if (! isset($_SESSION['logged_user']) ) {
         echo "<script>document.location.href = '/index.php';</script>";
     }
+
+    $data2 = $_GET;
 ?>
 
 <!DOCTYPE html>
