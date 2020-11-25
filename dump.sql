@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Ноя 25 2020 г., 13:12
+-- Время создания: Ноя 25 2020 г., 15:50
 -- Версия сервера: 5.6.44-86.0
 -- Версия PHP: 5.6.40
 
@@ -31,14 +31,16 @@ CREATE TABLE IF NOT EXISTS `friends` (
   `user1` int(11) NOT NULL,
   `user2` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `friends`
 --
 
 INSERT INTO `friends` (`id`, `user1`, `user2`) VALUES
-(3, 4, 6);
+(3, 4, 6),
+(7, 15, 13),
+(8, 14, 13);
 
 -- --------------------------------------------------------
 
@@ -116,22 +118,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   `points` int(11) NOT NULL DEFAULT '0',
   `math_level` int(11) NOT NULL DEFAULT '1',
   `logic_level` int(11) NOT NULL DEFAULT '1',
-  `ans` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `ans` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'NONE312',
   `control` int(11) NOT NULL DEFAULT '0',
   `checkcontrol` int(11) NOT NULL DEFAULT '0',
   `today_complete` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Дамп данных таблицы `users`
---
-
-INSERT INTO `users` (`id`, `email`, `name`, `password`, `points`, `math_level`, `logic_level`, `ans`, `control`, `checkcontrol`, `today_complete`) VALUES
-(4, 'mail.vchpro@yandex.ru', 'Влад', '$2y$10$0iF3h02o/U0nMTdM8dTpnuu4ZB5bzdmpxeSlO/PlXHwNAcOnvrJBO', 100002, 1, 1, '0', 0, 0, 1),
-(7, '200@gmail.com', 'Ленусёк', '$2y$10$BOre42XVLsqVGMAnz6QJYO5aUndJ4ak1K83f2INLVKCqTksQl.Ojq', 0, 1, 9, '0', 40, 2, 0),
-(8, 'говкошмык', 'Толик', '$2y$10$PrP0IZ6fl09I5wX9XDZfluHH22xCJwHRuE3zUNZ6wDNggjB8uWrk6', 99850, 14, 7, '0', 100, 0, 0);
-
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
