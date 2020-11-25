@@ -17,7 +17,18 @@
     function generate_math_1() {
         global $user;
         global $question;
-        $question = R::findOne('questions', 'id = ?', array(rand(1, 12)));
+        if($user->checkcontrol == 2) {
+            $question = R::findOne('questions', 'id = ?', array(rand(1, 12)));
+        }
+        else {
+            if($user->math_level > 12) {
+                echo "<script>document.location.href = '/math.php?complete=1';</script>";
+                die;
+            }
+            else {
+                $question = R::findOne('questions', 'id = ?', array($user->math_level));
+            }
+        }
 
         $user->ans = $question->ans;
 
@@ -27,7 +38,20 @@
     function generate_math_2() {
         global $user;
         global $question;
-        $question = R::findOne('questions', 'id = ?', array(rand(13, 23)));
+
+        if($user->checkcontrol == 2) {
+            $question = R::findOne('questions', 'id = ?', array(rand(13, 23)));
+        }
+
+        else {
+            if($user->math_level > 23) {
+                echo "<script>document.location.href = '/math.php?complete=1';</script>";
+                die;
+            }
+            else {
+                $question = R::findOne('questions', 'id = ?', array($user->math_level));
+            }
+        }
 
         $user->ans = $question->ans;
 
@@ -37,8 +61,21 @@
     function generate_logic_1() {
         global $user;
         global $question;
-        $question = R::findOne('questions', 'id = ?', array(rand(24, 39)));
 
+        if($user->checkcontrol == 2) {
+            $question = R::findOne('questions', 'id = ?', array(rand(24, 39)));
+        }
+
+        else {
+            if($user->logic_level > 16) {
+                echo "<script>document.location.href = '/logic.php?complete=1';</script>";
+                die;
+            }
+            else {
+                $question = R::findOne('questions', 'id = ?', array($user->logic_level + 23));
+            }
+        }
+        
         $user->ans = $question->ans;
 
         R::store($user);

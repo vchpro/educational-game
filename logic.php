@@ -17,6 +17,25 @@
     <title>Educational Game | Выбор уровня</title>
 </head>
 <body>
+    <?php
+    if(isset($data2["complete"])) {
+        echo "
+        <div class='error'>
+        <span class='error__heading'>Ошибка</span>
+        <span class='error__text'>Вы уже прошли этот уровень</span>
+        <a href='delprogress.php?logic=1' class='error__text'>Сбросить прогресс</a>
+    </div>
+
+        <script>
+            tmp = document.querySelector('.error');
+            setTimeout(function() {
+                tmp.classList.add('hide');
+            },3000);
+        </script>
+    ";
+    }
+
+?>
     <header class="header">
         <div class="header-container header-container--modifed">
             <h1 class="header-container__heading">

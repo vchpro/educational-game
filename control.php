@@ -55,7 +55,7 @@
 
     if(isset ($data["do_control"])) {
         if(is_numeric($data["count"])) {
-            if($user->points - $data["count"] >= 0) {
+            if($user->points - $data["count"] >= 0 && $data["count"] > 0) {
                 $user->points -= $data["count"];
                 $user->control = $data["count"];
                 $user->checkcontrol = 1;
