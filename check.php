@@ -3,7 +3,7 @@
     $data = $_POST;
     $data2 = $_GET;
 
-    if($user->ans == "0" && $data2["type"] != "day") {
+    if($user->ans == "NONE312" && $data2["type"] != "day") {
         echo "<script>document.location.href = '/choose.php';</script>";
         die;
     }
@@ -13,7 +13,7 @@
         switch($data2["type"]) {
             case "math":
         		if($data2["ans"] == $user->ans) {
-                    $user->ans = 0;
+                    $user->ans = "NONE312";
                     if($user->control != 0 && $user->checkcontrol == 2) {
                         $tmp = $user->control / 2;
                         $user->points += $user->control + $user->control / 2;
@@ -38,7 +38,7 @@
                         echo "<script>document.location.href = '/control.php?bad=".$tmp."';</script>";
                     }
                     else {
-                        $user->ans = 0;
+                        $user->ans = "NONE312";
                         R::store($user);
                         echo "<script>document.location.href = '/test.php?other=bad&type=math&level=".$data2["level"]."';</script>";
                     }
@@ -47,7 +47,7 @@
             
             case "logic":
         		if($data2["ans"] == $user->ans) {
-        			$user->ans = 0;
+        			$user->ans = "NONE312";
                     if($user->control != 0 && $user->checkcontrol == 2) {
                         $tmp = $user->control / 2;
                         $user->points += $user->control + $user->control / 2;
@@ -71,7 +71,7 @@
                         echo "<script>document.location.href = '/control.php?bad=".$tmp."';</script>";
                     }
                     else {
-                	    $user->ans = 0;
+                	    $user->ans = "NONE312";
         			    R::store($user);
                         echo "<script>document.location.href = '/test.php?other=bad&type=logic&level=".$data2["level"]."';</script>";
                     }

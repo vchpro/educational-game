@@ -66,16 +66,23 @@
     <p class="main__text main__text--modifed">Друзья</p>
     </header>
 
-    <main class="main main--modifed">
+    <main class="main main--modifed main--long">
         <div class="friend">
             <p class="friend__name">Ссылка для добавления друзей:</p>
-            <span class="friend__url">localhost/friend.php?id=<?php echo $user->id ?></span>
+            <span class="friend__url">cj75139.tmweb.ru/friend.php?id=<?php echo $user->id ?></span>
         </div>
 
         <div class="my-friends">
-            <h2 class="my-friends__heading">Ваши друзья</h2>
-            <?php
+        <?php
             $friends = R::getAll('SELECT `user1` FROM `friends` WHERE `user2` = '. $user->id);
+            $friends2 = R::getAll('SELECT `user2` FROM `friends` WHERE `user1` = '. $user->id);
+
+
+            if($friends && $friends2) {
+                echo '<h2 class="my-friends__heading">Ваши друзья</h2>';
+            }
+
+
             foreach ($friends as $friend) {
             $friend_my = R::findOne('users', 'id = ?', array($friend["user1"]));
                 echo "
@@ -89,8 +96,7 @@
                 ";
             }
 
-            $friends = R::getAll('SELECT `user2` FROM `friends` WHERE `user1` = '. $user->id);
-            foreach ($friends as $friend) {
+            foreach ($friends2 as $friend) {
             $friend_my = R::findOne('users', 'id = ?', array($friend["user2"]));
                 echo "
                 <form action='friend.php' method='post' class='friend-card'>
@@ -106,6 +112,28 @@
         </div>
 
     </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h2 class="footer__heading">Open Source</h2>
+            <div class="footer-social">
+                <a href="" class="footer-social__item footer-social__item--facebook">
+                    <span class="visually-hidden">Наш Facebook</span>
+                </a>
+
+                <a href="" class="footer-social__item footer-social__item--vk">
+                    <span class="visually-hidden">Наш VK</span>
+                </a>
+
+                <a href="" class="footer-social__item footer-social__item--instagram">
+                    <span class="visually-hidden">Наш Instagram</span>
+                </a>
+            </div>
+            <div class="footer__decorate"></div>
+
+            <span class="footer__count">Ваше количество очков: <?php echo $user->points; ?></span>
+        </div>
+    </footer>
 
     <section class="mobile-menu hide">
         <div class="mobile-center">

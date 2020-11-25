@@ -56,7 +56,7 @@
     <p class="main__text main__text--modifed">Выберите уровень</p>
     </header>
 
-    <main class="main main--modifed">
+    <main class="main main--modifed main--long2">
         <section class="levels">
             <h1 class="visually-hidden">Уровни</h1>
             <article class="level">
@@ -69,6 +69,28 @@
             </article>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h2 class="footer__heading">Open Source</h2>
+            <div class="footer-social">
+                <a href="" class="footer-social__item footer-social__item--facebook">
+                    <span class="visually-hidden">Наш Facebook</span>
+                </a>
+
+                <a href="" class="footer-social__item footer-social__item--vk">
+                    <span class="visually-hidden">Наш VK</span>
+                </a>
+
+                <a href="" class="footer-social__item footer-social__item--instagram">
+                    <span class="visually-hidden">Наш Instagram</span>
+                </a>
+            </div>
+            <div class="footer__decorate"></div>
+
+            <span class="footer__count">Ваше количество очков: <?php echo $user->points; ?></span>
+        </div>
+    </footer>
 
     <section class="mobile-menu hide">
         <div class="mobile-center">

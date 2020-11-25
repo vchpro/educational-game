@@ -36,7 +36,7 @@
                 $errors[] = 'Неверно введен пароль!';
             }
 
-        } else
+        }else
         {
             $errors[] = 'Пользователь с такой почтой не найден!';
         }
@@ -83,8 +83,13 @@
             $errors[] = 'Пользователь с таким Email уже существует';
         }
 
+        if ( R::count('users', "name = ?", array($data['user_name'])) > 0)
+        {
+            $errors[] = 'Пользователь с таким логином уже существует';
+        }
+
         if(strlen($data['user_name']) > 64) {
-            $errors[] = 'Имя должно состоять не более чем из 64 символов';
+            $errors[] = 'Логин должен состоять не более чем из 64 символов';
         }
 
         if(strlen($data['user_email']) > 128) {
@@ -141,6 +146,7 @@
             <button type="button" class="auth header-container__auth">Авторизация</button>
         </div>
     </header>
+
     <main class="main">
         <p class="main__text">Образовательные интерактивные игры для школьников</p>
         <button type="button" class="main__auth auth">Авторизация</button>
@@ -150,6 +156,28 @@
         </div>
     </main>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <h2 class="footer__heading">Open Source</h2>
+            <div class="footer-social">
+                <a href="" class="footer-social__item footer-social__item--facebook">
+                    <span class="visually-hidden">Наш Facebook</span>
+                </a>
+
+                <a href="" class="footer-social__item footer-social__item--vk">
+                    <span class="visually-hidden">Наш VK</span>
+                </a>
+
+                <a href="" class="footer-social__item footer-social__item--instagram">
+                    <span class="visually-hidden">Наш Instagram</span>
+                </a>
+            </div>
+            <div class="footer__decorate"></div>
+
+            <!-- <span class="footer__count">Ваше количество очков: 1000</span> -->
+            <span class="footer__count">Проект с открытым исходным кодом</span>
+        </div>
+    </footer>
     <section class="mobile-menu hide">
         <div class="mobile-center">
             <h2 class="mobile-center__heading">Educational Game</h2>
@@ -182,7 +210,7 @@
                 <span class="visually-hidden">Закрыть меню</span>
             </span>
         </div>
-        <input type="text" name="user_name" maxlength="64" class="reg__input" placeholder="Имя">
+        <input type="text" name="user_name" maxlength="64" class="reg__input" placeholder="Логин">
         <input type="text" name="user_email" maxlength="128" class="reg__input" placeholder="E-mail">
         <input type="password" name="user_pass" maxlength="128" class="reg__input" placeholder="Пароль">
         <button type="submit" class="reg__button" name="do_reg">Зарегистрироваться</button>
