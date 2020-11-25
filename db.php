@@ -1,6 +1,6 @@
 <?php 
 require 'lib/rb.php';
-R::setup( 'mysql:host=127.0.0.1;dbname=site','root', 'root' ); 
+R::setup( 'mysql:host=127.0.0.1;dbname=cj75139_test','cj75139_test', 'sxQgQY8w' ); 
 
 if ( !R::testconnection() )
 {

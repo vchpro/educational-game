@@ -44,6 +44,7 @@
             <a href="logic.php" class="btn-container__btn btn">Логика</a>
             <a href="friend.php" class="btn-container__btn btn">Друзья</a>
             <a href="rate.php" class="btn-container__btn btn">Рейтинг</a>
+            <a href="control.php" class="btn-container__btn btn">Контрольные</a>
         </div>
     
         <div class="decorate decorate-choose">

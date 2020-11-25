@@ -289,6 +289,10 @@ body {
     margin-top: 15px;
   }
 
+  .btn-container__btn:nth-of-type(5) {
+    margin-top: 15px;
+  }
+
   .mobile-menu {
     display: none;
   }
