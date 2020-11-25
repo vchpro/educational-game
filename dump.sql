@@ -33,15 +33,6 @@ CREATE TABLE IF NOT EXISTS `friends` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Дамп данных таблицы `friends`
---
-
-INSERT INTO `friends` (`id`, `user1`, `user2`) VALUES
-(3, 4, 6),
-(7, 15, 13),
-(8, 14, 13);
-
 -- --------------------------------------------------------
 
 --
