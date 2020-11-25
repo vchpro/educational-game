@@ -1335,6 +1335,10 @@ main {
   .main--long2 {
     padding-bottom: 300px;
   }
+  
+  .main--long4 {
+    padding-bottom: 481px;
+  }
 
   .main--long3 {
     padding-bottom: 415px;
@@ -1352,5 +1356,9 @@ main {
 
   .main--long3 {
     padding-bottom: 285px;
+  }
+
+  .main--long4 {
+    padding-bottom: 360px;
   }
 }
