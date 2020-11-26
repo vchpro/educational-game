@@ -99,6 +99,7 @@ body {
 }
 
 .decorate {
+  width: 320px;
   height: 177px;
   background-image: url(../img/best-course-mobile.png);
   background-position: center;
@@ -317,6 +318,7 @@ body {
   }
 
   .decorate {
+    width: 768px;
     height: 396px;
     background-image: url(../img/best-course-tablet.png);
   }
@@ -356,6 +358,7 @@ body {
   }
 
   .decorate {
+    width: 1440px;
     margin-top: 46px;
     background-image: url(../img/best-course-computer.png);
     height: 726px;
