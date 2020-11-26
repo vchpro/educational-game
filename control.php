@@ -56,6 +56,24 @@
     if(isset ($data["do_control"])) {
         if(is_numeric($data["count"])) {
             if($user->points - $data["count"] >= 0 && $data["count"] > 0) {
+                if($data["count"] > 150) {
+                    echo "
+                    <div class='error'>
+                        <span class='error__heading'>Ошибка</span>
+                        <span class='error__text'>Ставка не может быть больше 150 очков!</span>
+                    </div>
+    
+                    <script>
+                        tmp = document.querySelector('.error');
+                        setTimeout(function() {
+                            tmp.classList.add('hide');
+                        },3000);
+                    </script>
+                ";
+                }
+                else {
+
+
                 $user->points -= $data["count"];
                 $user->control = $data["count"];
                 $user->checkcontrol = 1;
@@ -73,6 +91,7 @@
                         echo "<script>document.location.href = '/test.php?type=logic&level=1';</script>";
                     break;
                 }
+            }
             }
             else {
                 echo "
