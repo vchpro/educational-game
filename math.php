@@ -71,7 +71,7 @@
             </article>
 
         <?php
-        if($user->math_level >= 10) {
+        if($user->math_level > 12) {
             echo '
             <article class="level">
                 <img class="level__img level__img--two" src="img/math-2.svg">
