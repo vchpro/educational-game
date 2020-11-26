@@ -71,7 +71,6 @@
             </div>
         </section>
 
-        <span class="your-rate">У вас <?php echo $user->points ?> очков</span>
     </main>
 
     <footer class="footer">

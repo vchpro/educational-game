@@ -1324,12 +1324,12 @@ main {
 }
 
 .main--long3 {
-  padding-bottom: 150px;
+  padding-bottom: 220px;
 }
 
 @media (min-width: 768px) {
   .main--long {
-    padding-bottom: 530px;
+    padding-bottom: 570px;
   }
 
   .main--long2 {
@@ -1341,13 +1341,17 @@ main {
   }
 
   .main--long3 {
-    padding-bottom: 415px;
+    padding-bottom: 505px;
+  }
+
+  .main--long5 {
+    padding-bottom: 240px;
   }
 }
 
 @media (min-width: 1440px) {
   .main--long {
-    padding-bottom: 490px;
+    padding-bottom: 550px;
   }
 
   .main--long2 {
@@ -1355,7 +1359,7 @@ main {
   }
 
   .main--long3 {
-    padding-bottom: 285px;
+    padding-bottom: 375px;
   }
 
   .main--long4 {

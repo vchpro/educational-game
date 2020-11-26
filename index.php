@@ -147,7 +147,7 @@
         </div>
     </header>
 
-    <main class="main">
+    <main class="main main--long5">
         <p class="main__text">Образовательные интерактивные игры для школьников</p>
         <button type="button" class="main__auth auth">Авторизация</button>
 
