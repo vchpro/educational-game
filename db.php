@@ -27,11 +27,7 @@ $url = $url[0];
 
  
 if($url != "/test.php" && $url != "/check.php" && isset($_SESSION['logged_user']) ) {
-	if($user->ans != 0) {
-		$user->ans = 0;
-	}
-	if($user->control != 0) {
-		$user->control = 0;
-	}
+	$user->ans = 0;
+	$user->control = 0;
 	R::store($user);
 }
