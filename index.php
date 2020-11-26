@@ -33,12 +33,12 @@
                 echo "<script>document.location.href = '/choose.php';</script>";
             }else
             {
-                $errors[] = 'Неверно введен пароль!';
+                $errors[] = 'Неверно введен пароль';
             }
 
         }else
         {
-            $errors[] = 'Пользователь с таким Email не найден!';
+            $errors[] = 'Пользователь с таким Email не найден';
         }
         
         if ( ! empty($errors) )
