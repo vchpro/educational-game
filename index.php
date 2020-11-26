@@ -38,7 +38,7 @@
 
         }else
         {
-            $errors[] = 'Пользователь с такой почтой не найден!';
+            $errors[] = 'Пользователь с таким Email не найден!';
         }
         
         if ( ! empty($errors) )
@@ -93,7 +93,7 @@
         }
 
         if(strlen($data['user_email']) > 128) {
-            $errors[] = 'Почта должна состоять не более чем из 128 символов';
+            $errors[] = 'Email должен состоять не более чем из 128 символов';
         }
 
         if(strlen($data['user_pass']) > 128) {
@@ -102,7 +102,7 @@
 
         if (filter_var($data['user_email'], FILTER_VALIDATE_EMAIL) === false)
         {
-            $errors[] = 'Введите корректную почту';
+            $errors[] = 'Введите корректный Email';
         }
 
 
