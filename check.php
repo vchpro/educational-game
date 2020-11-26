@@ -86,7 +86,7 @@
 
 
             case "day":
-                if($user->day_complete == 0) {
+                if($user->today_complete == 0) {
                     $question = R::findOne('questions', 'id = ?', array(0));
                     if($data2["ans"] == $question->ans) {
                             $user->points += 50;
@@ -103,7 +103,8 @@
                     }
                 }
                 else {
-                    echo "Обнаружена попытка иньекции. Запрос отклонен.";
+                    // Reaction
+                    echo "<script>document.location.href = '/choose.php';</script>";
                 }
             break;
 
