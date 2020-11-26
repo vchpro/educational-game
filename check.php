@@ -86,19 +86,24 @@
 
 
             case "day":
-                $question = R::findOne('questions', 'id = ?', array(0));
-                if($data2["ans"] == $question->ans) {
-                        $user->points += 50;
-                        $user->today_complete = 1;
-                        R::store($user);
-                        echo "<script>document.location.href = '/choose.php?good=1".$tmp."';</script>";
-        		}
-                else {
-                    if($user->points >= 20) {
-                        $user->points -= 20;
+                if($user->day_complete == 0) {
+                    $question = R::findOne('questions', 'id = ?', array(0));
+                    if($data2["ans"] == $question->ans) {
+                            $user->points += 50;
+                            $user->today_complete = 1;
+                            R::store($user);
+                            echo "<script>document.location.href = '/choose.php?good=1".$tmp."';</script>";
                     }
-                    R::store($user);
-                    echo "<script>document.location.href = '/choose.php?bad=1".$tmp."';</script>";
+                    else {
+                        if($user->points >= 20) {
+                            $user->points -= 20;
+                        }
+                        R::store($user);
+                        echo "<script>document.location.href = '/choose.php?bad=1".$tmp."';</script>";
+                    }
+                }
+                else {
+                    echo "Обнаружена попытка иньекции. Запрос отклонен.";
                 }
             break;
 
