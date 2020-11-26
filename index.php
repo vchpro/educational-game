@@ -14,8 +14,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/normalize.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.min.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
     <title>Educational Game | Главная</title>
@@ -230,6 +230,6 @@
         <button type="submit" class="login__button" name="do_login">Войти</button>
         <button type="button" class="login__yet">Еще не зарегистрированы?</button>
     </form>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
 </body>
 </html>

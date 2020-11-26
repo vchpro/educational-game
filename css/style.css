@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 2 version
+*/
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
@@ -10,7 +17,8 @@ body {
   overflow: hidden;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
-  clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+          clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
 }
 
 .hide {
@@ -33,8 +41,12 @@ body {
 .header-container {
   width: 275px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-left: 13px;
 }
 
@@ -122,8 +134,12 @@ body {
 }
 
 .mobile-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 275px;
   margin: 0 auto;
   padding-left: 70px;
@@ -155,10 +171,14 @@ body {
 
 .social {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 105px;
   margin: 0 auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0px;
   margin-top: 53px;
 }
@@ -252,8 +272,12 @@ body {
 .friend-card {
   width: 180px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .friend-card__name {
@@ -271,9 +295,14 @@ body {
 
   .btn-container {
     width: 406px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 0 auto;
     margin-top: 65px;
   }
@@ -379,11 +408,15 @@ body {
 
 .login-center {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .reg-center {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -431,13 +464,16 @@ body {
   margin: 0 auto;
   padding-right: 68px;
   background-color: #FFFFFF;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-indent: 25px;
 }
 
 .control-form {
   width: 270px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 34px;
 }
@@ -467,6 +503,42 @@ body {
 
 .reg__input:hover, .login__input:hover, .control-form__input:hover {
   border: none;
+}
+
+.reg__input::-webkit-input-placeholder, .login__input::-webkit-input-placeholder, .control-form__input::-webkit-input-placeholder {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  color: #444444;
+  opacity: 0.3;
+  line-height: 60px;
+}
+
+.reg__input::-moz-placeholder, .login__input::-moz-placeholder, .control-form__input::-moz-placeholder {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  color: #444444;
+  opacity: 0.3;
+  line-height: 60px;
+}
+
+.reg__input:-ms-input-placeholder, .login__input:-ms-input-placeholder, .control-form__input:-ms-input-placeholder {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  color: #444444;
+  opacity: 0.3;
+  line-height: 60px;
+}
+
+.reg__input::-ms-input-placeholder, .login__input::-ms-input-placeholder, .control-form__input::-ms-input-placeholder {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  color: #444444;
+  opacity: 0.3;
+  line-height: 60px;
 }
 
 .reg__input::placeholder, .login__input::placeholder, .control-form__input::placeholder {
@@ -653,7 +725,8 @@ body {
 }
 
 .main__route-btn {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: block;
   width: 245px;
   height: 52px;
@@ -682,6 +755,8 @@ body {
 }
 
 .rate__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -738,7 +813,8 @@ body {
   top: 100px;
   background-color: #192144;
   border: 1px solid #000000;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 25px;
 }
 
@@ -803,7 +879,8 @@ body {
   display: block;
   width: 320px;
   margin: 0 auto;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 3px solid #169DFF;
 }
 
@@ -871,9 +948,13 @@ body {
   }
 
   .levels {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 688px;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 0 auto;
   }
 
@@ -894,7 +975,8 @@ body {
     width: 410px;
     min-height: 455px;
     left:50%;
-    transform:translate(-50%, 0);
+    -webkit-transform:translate(-50%, 0);
+            transform:translate(-50%, 0);
     border-radius: 15px;
   }
 
@@ -1104,7 +1186,8 @@ body {
   top: 100px;
   background-color: #EDEFF6;
   border: 1px solid #000000;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 25px;
 }
 
@@ -1141,8 +1224,12 @@ body {
 @media (min-width: 1440px) {
   .friend {
     width: 760px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 0 auto;
     padding-bottom: 21px;
   }
@@ -1208,6 +1295,8 @@ main {
   list-style: none;
   width: 135px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 38px;
 }
@@ -1262,6 +1351,8 @@ main {
   }
 
   .footer-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 768px;
     margin: 0 auto;
